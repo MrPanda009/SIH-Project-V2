@@ -67,7 +67,9 @@ export default function RaiseTicketFlow({ onSuccess, onCancel }: RaiseTicketFlow
               const request: GeocodingResponse = await opencage.geocode({q: `${latitude}, ${longitude}`, key: opencagekey});
               if (request.results.length > 0) {
                 const place = request.results[0];
-                return place.annotations?.DIGIPIN;
+                const DIGIPIN = place.annotations?.DIGIPIN;
+                const adr = place.formatted; 
+                return {DIGIPIN , adr} ;
               }
               return null;
             } catch (err) {
@@ -79,13 +81,13 @@ export default function RaiseTicketFlow({ onSuccess, onCancel }: RaiseTicketFlow
           
           // In a real app, you'd reverse geocode to get address and ward
           // For demo, we'll create mock data
-          const DIGIPIN = await getdigipin();
+          const digipinresult = await getdigipin();
           const realLocation = {
             lat: latitude,
             lng: longitude,
-            address: `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`,
+            address: digipinresult?.adr,
             ward: `Ward ${Math.floor(Math.random() * 50) + 1}`,
-            digiPin: DIGIPIN
+            digiPin: digipinresult?.DIGIPIN
           }
           
           setTicketData(prev => ({ ...prev, location: realLocation }))
