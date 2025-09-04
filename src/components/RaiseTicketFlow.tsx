@@ -9,6 +9,8 @@ import { Alert, AlertDescription } from './ui/alert'
 import { Badge } from './ui/badge'
 import { Camera, Upload, MapPin, CheckCircle, ArrowLeft, X } from 'lucide-react'
 import { ticketsAPI, uploadAPI } from '../utils/api'
+import opencage, { geocode } from 'opencage-api-client';
+import type { GeocodingRequest, GeocodingResponse } from 'opencage-api-client';
 
 interface RaiseTicketFlowProps {
   onSuccess: () => void
@@ -58,18 +60,35 @@ export default function RaiseTicketFlow({ onSuccess, onCancel }: RaiseTicketFlow
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords
+          const opencagekey = '3d55f322619442a49ab49f48dfb7dfe5';
+
+          async function getdigipin() {
+            try {
+              const request: GeocodingResponse = await opencage.geocode({q: `${latitude}, ${longitude}`, key: opencagekey});
+              if (request.results.length > 0) {
+                const place = request.results[0];
+                return place.annotations?.DIGIPIN;
+              }
+              return null;
+            } catch (err) {
+              console.error('Error fetching DIGIPIN:', err);
+              return null;
+            }
+          }
+
           
           // In a real app, you'd reverse geocode to get address and ward
           // For demo, we'll create mock data
-          const mockLocation = {
+          const DIGIPIN = await getdigipin();
+          const realLocation = {
             lat: latitude,
             lng: longitude,
             address: `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`,
             ward: `Ward ${Math.floor(Math.random() * 50) + 1}`,
-            digiPin: `DG${Math.floor(Math.random() * 1000000)}`
+            digiPin: DIGIPIN
           }
           
-          setTicketData(prev => ({ ...prev, location: mockLocation }))
+          setTicketData(prev => ({ ...prev, location: realLocation }))
           setLocationLoading(false)
         },
         (error) => {
