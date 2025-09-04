@@ -19,10 +19,34 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/mobile.png",
-      "sizes": "360x640",
-      "type": "image/png"
-      // No form_factor or set to something other than "wide"
+      "src": "/screenshots/mobile1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/mobile2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/mobile3.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/mobile4.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/mobile5.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/desktop.png",
@@ -30,6 +54,5 @@
       "type": "image/png",
       "form_factor": "wide"
     }
-  ],
-  "form-factor": {"type" : "mobile" }
+  ]
 }
