@@ -22,31 +22,31 @@
       "src": "/screenshots/mobile1.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "mobile"
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/mobile2.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "mobile"
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/mobile3.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "mobile"
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/mobile4.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "mobile"
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/mobile5.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "form_factor": "mobile"
+      "form_factor": "narrow"
     },
     {
       "src": "/screenshots/desktop.png",
