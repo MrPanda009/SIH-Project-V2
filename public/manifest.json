@@ -19,33 +19,33 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/mobile1.png",
+      "src": "/screenshots/mobile1.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/mobile2.png",
+      "src": "/screenshots/mobile2.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/mobile3.png",
+      "src": "/screenshots/mobile3.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/mobile4.png",
+      "src": "/screenshots/mobile4.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
-      "src": "/screenshots/mobile5.png",
+      "src": "/screenshots/mobile5.jpg",
       "sizes": "1080x1920",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow"
     },
     {
